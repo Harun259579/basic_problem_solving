@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Largest number example
+	</title>
+
+	<style>
+		body{
+			font-family: Arial;
+			text-align: center;
+			margin: 50px;
+		}
+		input,button{
+			padding: 10px;
+			margin: 10px;
+			font-size: 10px;
+		}
+		#output
+		{
+			font-size: 20px;
+			font-weight: bold;
+			margin-top: 20px;
+			color: darkblue;
+		}
+	</style>
+</head>
+<body>
+	<h2>Enter Numbers:</h2>
+	<input type="text" name="number" id="number" placeholder="eg. 10, 20, 30">
+	<button type="button" onclick="sortnodesen()">Desending</button>
+	<button type="button" onclick="sortnoasen()">Asending</button>
+
+	<p id="output">
+		
+	</p>
+
+	<script>
+
+		function sortnodesen()
+		{
+			let input = document.getElementById('number').value;
+			let numbers = input.split(",").map(num=> parseFloat(num.trim()));
+			let sortnumbers = numbers.filter(num=>!isNaN(num)).sort((a,b)=>b-a);
+			document.getElementById('output').innerHTML="Sorted NUmber is "+sortnumbers.join(",");
+		}
+		function sortnoasen()
+		{
+			let input = document.getElementById('number').value;
+			let numbers = input.split(",").map(num=> parseFloat(num.trim()));
+			let sortnumbers = numbers.filter(num=>!isNaN(num)).sort((a,b)=>a-b);
+			document.getElementById('output').innerHTML="Sorted NUmber is "+sortnumbers.join(",");
+		}
+		
+		
+	</script>
+
+</body>
+</html>

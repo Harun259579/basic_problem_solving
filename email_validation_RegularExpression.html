@@ -1,0 +1,38 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>
+  		Email Address Validation Example
+  	</title>
+  </head>
+  <body>
+  	Email: <input type="text" name="email" id="txtemail">
+  	<button type="button" onclick="checkemail()">check email</button>
+
+  	<p id="msg"></p>
+
+
+  	<script>
+  		function checkemail()
+  		{
+  			var email = document.getElementById('txtemail').value;
+
+  			var res = /^[a-z0-9]+[@][a-z0-9]+[.][a-z]{2,3}$/  //pattern create
+
+  			var okk=res.test(email); //match pattern and email
+  			if(okk==true)
+  			{
+  				document.getElementById('msg').innerHTML="valid Email"
+
+  			}
+  			else
+  			{
+  				document.getElementById('msg').innerHTML="Invalid Email"
+  			}
+  		}
+  	</script>
+  
+  </body>
+  </html>
